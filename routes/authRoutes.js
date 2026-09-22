@@ -1,0 +1,10 @@
+const express = require("express");
+const router = express.Router();
+const authController = require("../controllers/authControllers");
+//const bcrypt = require('bcrypt');
+router.route("/forgot-password").post(authController.forgotPassword);
+router.route("/register").post(authController.register);
+router.route("/login").post(authController.login);
+router.route("/confirm/:token").get(authController.confirmationbytoken);
+router.route("/reset-password/:token").post(authController.resetpassword);
+module.exports = router;
